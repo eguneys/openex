@@ -64,6 +64,7 @@ export default class MovePicker {
           this.lastMove = undefined;
 
           ctx.chat(`Out of book now. Score: ${score.ply}/${score.maxPly}`);
+          ctx.offerDrawNextMove = true;
         }
       }
     }

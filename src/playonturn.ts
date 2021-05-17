@@ -24,6 +24,8 @@ export default class PlayOnTurn extends Play {
   initialFen!: at.Fen
   moves!: string
   status!: at.GameStatus
+
+  offerDrawNextMove: boolean = false;
   
   constructor(botId: string, token: string, id: at.GameId, player: IPlayer) {
     super(botId,
@@ -31,6 +33,15 @@ export default class PlayOnTurn extends Play {
           id);
 
     this.player = player;
+  }
+
+  move(uci: at.Uci, offeringDraw?: boolean) {
+    if (this.offerDrawNextMove) {
+      this.offerDrawNextMove = false;
+      offeringDraw = true;
+    }
+
+    return super.move(uci, offeringDraw);
   }
 
   async _move(turn: at.Color) {
