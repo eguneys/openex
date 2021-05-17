@@ -1,2 +1,4 @@
 node_modules/
 lib/
+bin/conf.js
+bin/stockfish_13_linux_x64/
