@@ -25,9 +25,24 @@ export default class MovePicker {
   setPgns(pgns: Array<erm.QPGN>) {
     this.pgns = pgns;
   }
-
+  
+  randomBuckets: Map<number, Array<number>> = (() => {
+    let _res = new Map<number, Array<number>>();
+    for (let n = 0; n < 10; n++) {
+      let res = [];
+      for (let i = 0; i < n; i++) {
+        for (let j = (n - i); j >= 0; j--) {
+          res.push(i);
+        }
+      }
+      _res.set(n, res);
+    }
+    return _res;
+  })();
+  
   private pickFromQMoves(moves: Array<erm.QMove>) {
-    return moves[Math.floor(Math.random() * moves.length)];
+    let ns = this.randomBuckets.get(moves.length) || [0];
+    return moves[ns[Math.floor(Math.random()*ns.length)]];
   }
 
   pick(ctx: PlayOnTurn, fen: string) {
