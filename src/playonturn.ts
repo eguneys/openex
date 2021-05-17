@@ -54,7 +54,8 @@ export default class PlayOnTurn extends Play {
     this.pov = (data.white.id === this.botId) ? 'white' : 'black';
     this.opponent = data[oppositeColor(this.pov)];
     this.initialTurn = fenTurn(data.initialFen);
-
+    this.initialFen = data.initialFen;
+    
     this.moves = data.state.moves;
     this.status = data.state.status;
   }

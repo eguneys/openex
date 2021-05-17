@@ -23,7 +23,6 @@ export default class EnginePlayer implements IPlayer {
 
     await this.engine.init();
     await this.engine.isready();
-
     this.ready = true;
   }
 
