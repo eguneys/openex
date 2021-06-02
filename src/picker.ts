@@ -68,7 +68,7 @@ export default class MovePicker {
           this.lastMove = qmove;
         }
       }
-
+      
       if (move) {
         ctx.move(move);
         return true;

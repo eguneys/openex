@@ -25,9 +25,18 @@ export default class Psu implements IPlayer {
   
   async move(ctx: PlayOnTurn, position: string, moves: Array<string>) {
 
-    let handled = await this.book.move(ctx, position, moves)
+    let handled;
+    
+    try {
+      handled = await this.book.move(ctx, position, moves)
+    } catch (e) {
+      ctx.chat(`I lost the book.`);
+      ctx.offerDrawNextMove = true;
+      console.warn(e);
+      handled = false;
+    }
+    
     if (!handled) {
-
       return await this.stockfish.move(ctx, position, moves);
     }
     return handled;

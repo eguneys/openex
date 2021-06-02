@@ -31,6 +31,8 @@ export default class StudyImport {
     let fen = misc.fenAfterUcis(position, moves);
     if (fen) {
       res = this.picker.pick(ctx, fen);
+    } else {
+      return Promise.reject(`Can't find fen after ucis ${position} ${moves}`);
     }
     return Promise.resolve(res);
   }

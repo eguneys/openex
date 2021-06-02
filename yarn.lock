@@ -383,10 +383,15 @@ chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chesst@^2.0.0, chesst@^2.0.1:
+chesst@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/chesst/-/chesst-2.0.1.tgz#7178f1aa0539933eb9e30cfeea460526c020de2e"
   integrity sha512-mIwrYvSoP1OzmLoZIFhCF+QiHhLaQHWU2tsMK2ZvfLgF1HMWFBu78x98UrUhzUGEWjeJZ335Q5tD73IpIPqrgw==
+
+chesst@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/chesst/-/chesst-2.1.0.tgz#2d1001ca3fcbda0f03a1265df7761121cc45e657"
+  integrity sha512-CpaSlsDaYlAWj7hhGxZBBxp0SYREz+3LX3/044bsj0fVt2TseURxObczfqO34lAEv1gO9ZV0s1lO5omFyNR2Rw==
 
 chokidar@^3.4.3:
   version "3.5.1"
