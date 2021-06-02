@@ -60,7 +60,7 @@ export default class MovePicker {
 
     if (this.lastPgn) {
       let qmoves = q.qFen(this.lastPgn, fen);
-
+      
       if (qmoves) {
         let qmove = this.pickFromQMoves(qmoves);
         if (qmove) {

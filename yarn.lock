@@ -383,12 +383,7 @@ chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chesst@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/chesst/-/chesst-2.0.1.tgz#7178f1aa0539933eb9e30cfeea460526c020de2e"
-  integrity sha512-mIwrYvSoP1OzmLoZIFhCF+QiHhLaQHWU2tsMK2ZvfLgF1HMWFBu78x98UrUhzUGEWjeJZ335Q5tD73IpIPqrgw==
-
-chesst@^2.0.1:
+chesst@^2.0.1, chesst@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/chesst/-/chesst-2.1.0.tgz#2d1001ca3fcbda0f03a1265df7761121cc45e657"
   integrity sha512-CpaSlsDaYlAWj7hhGxZBBxp0SYREz+3LX3/044bsj0fVt2TseURxObczfqO34lAEv1gO9ZV0s1lO5omFyNR2Rw==
@@ -756,12 +751,12 @@ esra@^1.0.1:
     sfilg "^1.0.0"
     tamcher "^1.1.1"
 
-esrar@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.2.1.tgz#75384a44cebc15713c01950179835f088593ce99"
-  integrity sha512-Z8QdM0W0LQmQPxCF40TeVdu3msslR2F7l7ZJEcj+ahH1XfYc/8cvgbL5nbr2kx1+5iICHyj9zcFP+i9KPV9DBw==
+esrar@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.2.2.tgz#de18c319759c6a33642253298974d199ac4b988a"
+  integrity sha512-c3stgsz/7GVc4WPSEJQjcjrcyn43ZH2HKSsE3EwP8qbx8BQyo2gKg001OH+BWruB+ZJrHOEC16mfcn3Cbef6Lg==
   dependencies:
-    chesst "^2.0.0"
+    chesst "^2.1.0"
     esra "^1.0.1"
 
 estree-walker@^0.6.1:
