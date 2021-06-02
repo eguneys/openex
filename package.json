@@ -12,7 +12,8 @@
     "build": "rm -rf lib && tsc",
     "test": "yarn -s build && ava",
     "ava": "ava",
-    "start": "node ./bin/main"
+    "start": "node ./bin/main",
+    "prod": "node ./bin/main > ./logs/all.txt"
   },
   "prepublish": "yarn build",
   "devDependencies": {
