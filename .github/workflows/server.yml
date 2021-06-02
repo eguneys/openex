@@ -1,0 +1,16 @@
+on: push        
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: yarn install
+      - run: yarn build
+      - run: mkdir build && mv lib bin build/ && git log -n 1 --pretty=oneline > build/commit.txt
+      - run: cd build && tar -cvpJf ../build.tar.xz . && cd -
+      - uses: actions/upload-artifact@v2
+        with:
+          name: openex-src
+          path: build
