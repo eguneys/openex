@@ -752,9 +752,9 @@ esra@^1.0.1:
     tamcher "^1.1.1"
 
 esrar@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.2.2.tgz#de18c319759c6a33642253298974d199ac4b988a"
-  integrity sha512-c3stgsz/7GVc4WPSEJQjcjrcyn43ZH2HKSsE3EwP8qbx8BQyo2gKg001OH+BWruB+ZJrHOEC16mfcn3Cbef6Lg==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.2.3.tgz#5a135ecfa48e558d84a6be449a01c58c7e7828ef"
+  integrity sha512-98qZy+fMsb+YdrGGnY1vHL9KnxYlIKy5ehaietl5ZLpEc8x3ZVQ8WqEk0+0cg7Y4kATVTCSTSvkzCh+GsPdCJQ==
   dependencies:
     chesst "^2.1.0"
     esra "^1.0.1"
