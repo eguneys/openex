@@ -22,7 +22,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "apil": "^1.3.1",
+    "apil": "^1.4.0",
     "chesst": "^2.0.1",
     "esrar": "^1.2.1",
     "node-uci": "^1.3.4",

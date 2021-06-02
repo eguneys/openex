@@ -1,4 +1,4 @@
-import { at, study } from 'apil';
+import { at, StudyApi } from 'apil';
 import esrar, { StudyBuilder } from 'esrar';
 import MovePicker from './picker';
 import PlayOnTurn from './playonturn';
@@ -6,11 +6,15 @@ import { misc } from 'chesst';
 
 export default class StudyImport {
 
-  static get = (userId: at.UserId) => Promise.resolve(new StudyImport());
+  static get = (token: string, userId: at.UserId) => Promise.resolve(new StudyImport(token));
 
   picker: MovePicker
+  study: StudyApi
   
-  constructor() {
+  constructor(token: string) {
+
+    this.study = StudyApi.make({token});
+    
     this.picker = new MovePicker();
   }
 
@@ -39,13 +43,13 @@ export default class StudyImport {
     let match = studyLink.match(chapterIdReg);
     if (match) {
       ctx.chat(`Loading ${match[1]}/${match[2]} ..`);
-      pgns = await study.oneChapter(match[1], match[2]);
+      pgns = await this.study.oneChapter(match[1], match[2]);
     } else {
       match = studyLink.match(studyIdReg);
 
       if (match) {
         ctx.chat(`Loading ${match[1]} ..`);
-        pgns = await study.allChapters(match[1]);
+        pgns = await this.study.allChapters(match[1]);
       }
     }
 

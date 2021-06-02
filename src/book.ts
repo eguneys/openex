@@ -5,15 +5,15 @@ import { PamCache } from 'pampu';
 
 export default class Book implements IPlayer {
 
-  static make = () => new Book();
+  static make = (token: string) => new Book(token);
 
   studies: PamCache<at.UserId, Promise<StudyImport>>
   
-  constructor() {
+  constructor(token: string) {
 
     this.studies = new PamCache<at.UserId, Promise<StudyImport>>({
       size: 4,
-      loader: StudyImport.get
+      loader: _ => StudyImport.get(token, _)
     });
   }
   

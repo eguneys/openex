@@ -6,16 +6,16 @@ import Book from './book';
 
 export default class Psu implements IPlayer {
 
-  static make = (enginePath: string) => new Psu(enginePath);
+  static make = (enginePath: string, token: string) => new Psu(enginePath, token);
   
   stockfish: IPlayer
   book: IPlayer
   
-  constructor(enginePath: string) {
+  constructor(enginePath: string, token: string) {
 
     this.stockfish = Engine.make(enginePath);
 
-    this.book = Book.make();
+    this.book = Book.make(token);
   }
 
   async init() {

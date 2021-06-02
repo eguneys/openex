@@ -22,7 +22,7 @@ export default async function app(config: any) {
     process.exit(1); 
   }
   
-  let psu: IPlayer = Psu.make(enginePath);
+  let psu: IPlayer = Psu.make(enginePath, token);
 
   let bot = Bot.make(botId, token, psu);
 
