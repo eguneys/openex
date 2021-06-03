@@ -384,9 +384,9 @@ chalk@^4.1.0:
     supports-color "^7.1.0"
 
 chesst@^2.0.1, chesst@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/chesst/-/chesst-2.1.0.tgz#2d1001ca3fcbda0f03a1265df7761121cc45e657"
-  integrity sha512-CpaSlsDaYlAWj7hhGxZBBxp0SYREz+3LX3/044bsj0fVt2TseURxObczfqO34lAEv1gO9ZV0s1lO5omFyNR2Rw==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/chesst/-/chesst-2.1.2.tgz#2e1a8018052d264f341e1cae7fc057c68a226f26"
+  integrity sha512-+1sFTJOAIV7LplXX8pU7MIw1Ycpgl8MXTqo38agh7TAMmVxUt9bdXYyQFs6JLfO9o/AxrssE7affChHHbhEHAA==
 
 chokidar@^3.4.3:
   version "3.5.1"
@@ -752,9 +752,9 @@ esra@^1.0.1:
     tamcher "^1.1.1"
 
 esrar@^1.2.2:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.2.3.tgz#5a135ecfa48e558d84a6be449a01c58c7e7828ef"
-  integrity sha512-98qZy+fMsb+YdrGGnY1vHL9KnxYlIKy5ehaietl5ZLpEc8x3ZVQ8WqEk0+0cg7Y4kATVTCSTSvkzCh+GsPdCJQ==
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.2.4.tgz#4e54b235ef2551a3705939dca3d6428a01c62e9f"
+  integrity sha512-G++cZIXCZU2NSNZJdGRaSGUZ4rGGnJtyGSaug17+DDZD7UQXbO8Ee9yl/bvqnzVJ2WnNgCjNv3RyAoUBxDrOQw==
   dependencies:
     chesst "^2.1.0"
     esra "^1.0.1"

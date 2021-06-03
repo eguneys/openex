@@ -53,7 +53,9 @@ export default class PlayOnTurn extends Play {
   }
 
   async _chat(_: at.ChatLine) {
-    this.player.chat(this, _);
+    if (_.username === this.opponent.name) {
+      this.player.chat(this, _);
+    }
   }
 
   async _abort(_: at.GameStatus) {

@@ -41,15 +41,18 @@ export default class StudyImport {
     let chapterIdReg = /^https:\/\/lichess\.org\/study\/([A-Za-z0-9]{8})\/([A-Za-z0-9]{8})$/;
     let studyIdReg = /^https:\/\/lichess\.org\/study\/([A-Za-z0-9]{8})$/;
 
+    let matchedReg = '';
     let pgns;
     let match = studyLink.match(chapterIdReg);
     if (match) {
+      matchedReg = `${match[1]}/${match[2]}`;
       ctx.chat(`Loading ${match[1]}/${match[2]} ..`);
       pgns = await this.study.oneChapter(match[1], match[2]);
     } else {
       match = studyLink.match(studyIdReg);
 
       if (match) {
+        matchedReg = `${match[1]}`;
         ctx.chat(`Loading ${match[1]} ..`);
         pgns = await this.study.allChapters(match[1]);
       }
@@ -58,12 +61,13 @@ export default class StudyImport {
     try {
       if (pgns) {
         let builder = esrar(pgns);
-
         this.setPgns(builder);
         ctx.chat(`Loaded ${builder.pgns.length} pgns`);
+      } else {
+        console.warn(`No pgns in study ${match}`)
       }
     } catch (e) {
-      ctx.chat(`Couldnt load study link: ${studyLink}`);
+      ctx.chat(`Couldnt load study from: ${matchedReg}`);
     }
   }
   
