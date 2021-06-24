@@ -44,6 +44,8 @@ export default class StudyImport {
     let matchedReg = '';
     let pgns;
     let match = studyLink.match(chapterIdReg);
+
+    console.log('maybeLoad', studyLink, match);
     if (match) {
       matchedReg = `${match[1]}/${match[2]}`;
       ctx.chat(`Loading ${match[1]}/${match[2]} ..`);

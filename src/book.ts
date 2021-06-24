@@ -21,17 +21,17 @@ export default class Book implements IPlayer {
   }
   
   async move(ctx: PlayOnTurn, position: string, moves: Array<string>) {
-    let sim = await this.studies.get(ctx.opponent.id);
+    let sim = await this.studies.get(ctx.opponent.id.toLowerCase());
     return sim.move(ctx, position, moves);
   }
   
   async chat(ctx: PlayOnTurn, chat: at.ChatLine) {
-    let sim = await this.studies.get(chat.username);
+    let sim = await this.studies.get(chat.username.toLowerCase());
     return sim.maybeLoad(ctx, chat.text);
   }
   
   async abort(ctx: PlayOnTurn, status: at.GameStatus) {
-    let sim = await this.studies.get(ctx.opponent.id);
+    let sim = await this.studies.get(ctx.opponent.id.toLowerCase());
     sim.abort(status);
   }  
   

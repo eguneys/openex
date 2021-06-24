@@ -1,5 +1,6 @@
 import { erm, q } from 'esrar';
 import PlayOnTurn from './playonturn';
+import { initial } from 'chesst';
 
 export default class MovePicker {
 
@@ -49,7 +50,6 @@ export default class MovePicker {
 
     let move: string | undefined;
 
-    
     if (!this.lastPgn) {
       this.lastPgn = this.pgns.find(_ => q.qFen(_, fen));
 
@@ -60,7 +60,7 @@ export default class MovePicker {
 
     if (this.lastPgn) {
       let qmoves = q.qFen(this.lastPgn, fen);
-      
+
       if (qmoves) {
         let qmove = this.pickFromQMoves(qmoves);
         if (qmove) {
