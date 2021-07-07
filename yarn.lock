@@ -744,17 +744,17 @@ esprima@^4.0.0:
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
 esra@^1.0.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/esra/-/esra-1.2.0.tgz#45f8cf9936306479c1853a52423a1db6f1a7013c"
-  integrity sha512-OlSmKEth8SRbHvBQ+2ZUN+rpayAEnjPnX4bTacjuG4Y03Xz4YpHbLbVAOF7jSGbBfUaGqSjPX6lj25cgmfN0Yg==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/esra/-/esra-1.2.1.tgz#526f633d41e5858c0f848f01c4a235672a702063"
+  integrity sha512-Sls9HZ/LSgu+Gu8o2xaJ9kWhXVqZNl7kMIdwn7WWzAv1TzYh0Hr2PNF9bGYoN8EqtCV66Zaf/sW91YsWiob5pA==
   dependencies:
     sfilg "^1.0.0"
     tamcher "^1.1.1"
 
 esrar@^1.2.2:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.4.0.tgz#5ca6cf19ce27aa3e3e8285a2753b80573a790dbb"
-  integrity sha512-tGh+e8gBDJ3Fhgm1fihLxTdoDTAeURwZfYA5mJAadm2mtX/tAU/ShGlyjBfKFbbNG9xHCP6U0eLXVws7ZvHkCg==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.4.1.tgz#89004c0d5fea8a4fa313ba2a89185dd99b0ada85"
+  integrity sha512-J8kvmO1d5+uIMZlA5eBrsgPW1rABkOxNmz2UOgMlbIoZl/fZ7RThzQfOpZsW287cOqCYW9hmzsDAsQhIzix5Pg==
   dependencies:
     chesst "^2.1.0"
     esra "^1.0.1"
