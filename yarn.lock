@@ -383,11 +383,6 @@ chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chesst@^2.0.1, chesst@^2.1.0:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/chesst/-/chesst-2.1.2.tgz#2e1a8018052d264f341e1cae7fc057c68a226f26"
-  integrity sha512-+1sFTJOAIV7LplXX8pU7MIw1Ycpgl8MXTqo38agh7TAMmVxUt9bdXYyQFs6JLfO9o/AxrssE7affChHHbhEHAA==
-
 chokidar@^3.4.3:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.1.tgz#ee9ce7bbebd2b79f49f304799d5468e31e14e68a"
@@ -742,22 +737,6 @@ esprima@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-
-esra@^1.0.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/esra/-/esra-1.2.1.tgz#526f633d41e5858c0f848f01c4a235672a702063"
-  integrity sha512-Sls9HZ/LSgu+Gu8o2xaJ9kWhXVqZNl7kMIdwn7WWzAv1TzYh0Hr2PNF9bGYoN8EqtCV66Zaf/sW91YsWiob5pA==
-  dependencies:
-    sfilg "^1.0.0"
-    tamcher "^1.1.1"
-
-esrar@^1.2.2:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/esrar/-/esrar-1.4.1.tgz#89004c0d5fea8a4fa313ba2a89185dd99b0ada85"
-  integrity sha512-J8kvmO1d5+uIMZlA5eBrsgPW1rABkOxNmz2UOgMlbIoZl/fZ7RThzQfOpZsW287cOqCYW9hmzsDAsQhIzix5Pg==
-  dependencies:
-    chesst "^2.1.0"
-    esra "^1.0.1"
 
 estree-walker@^0.6.1:
   version "0.6.1"
@@ -1874,11 +1853,6 @@ serialize-javascript@^2.1.2:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-2.1.2.tgz#ecec53b0e0317bdc95ef76ab7074b7384785fa61"
   integrity sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==
 
-sfilg@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/sfilg/-/sfilg-1.0.0.tgz#99b628e35fd8a2b3f082ef63c5fe47fb65dd741b"
-  integrity sha512-eQTpR6kLCQ1SeLlpydQvOarfivvs1pfNGKNVAwVY2Rih/e29/LgDmUSeffq35gpvepwuhH9ZzA/inDDMBv59Gg==
-
 shebang-command@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
@@ -2067,11 +2041,6 @@ supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
-
-tamcher@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/tamcher/-/tamcher-1.1.1.tgz#36ca2781ed7c8ef54b4dd479840bd137f88bab26"
-  integrity sha512-KxFdo4nO51928DGVaQJ//qmHSY/gAP+csVuiLOXsqyfH/GeXhmp+RpFWFy3hDH432BdHEvAVQyEsXY81AXGldQ==
 
 temp-dir@^2.0.0:
   version "2.0.0"

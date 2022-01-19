@@ -78,10 +78,14 @@ export default class PlayOnTurn extends Play {
     let evenTurn = (data.moves === '')|| data.moves.split(' ').length % 2 === 0,
     turn = evenTurn ? this.initialTurn : oppositeColor(this.initialTurn);
 
+    let moves_changed = this.moves === '' || this.moves !== data.moves
+
     this.moves = data.moves;
     this.status = data.status;
 
-    this._move(turn);
+    if (moves_changed) {
+      this._move(turn);
+    }
   }
 
   async respondGameChat(data: at.ChatLine) {

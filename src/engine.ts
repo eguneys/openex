@@ -45,7 +45,6 @@ export default class EnginePlayer implements IPlayer {
   async move(ctx: PlayOnTurn, position: string, moves: Array<string>) {
     this.queue = this.queue.then(async () => {
       let _ = await this.baseMove(position, moves)
-
       ctx.move(_);
       return true;
     });

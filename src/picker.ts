@@ -1,20 +1,51 @@
-import { erm, q } from 'esrar';
 import PlayOnTurn from './playonturn';
-import { initial } from 'chesst';
+import { QPGN, QMove, move_uci } from 'chesstwo'
+
+
+function almostEqual(fen: string, key: string) {
+  let fs = fen.split(' '),
+    ks = key.split(' ');
+  return fs[0] === ks[0] && fs[1] === ks[1];
+}
+
+function qFen(pgn: QPGN, fen: string) {
+  for (let key of pgn.fens.keys()) {
+    if (almostEqual(fen, key)) {
+      return pgn.fens.get(key);
+    }
+  }
+}
+
+export type QScore = {
+  ply: number,
+  maxPly: number
+}
+
+function qScore(pgn: QPGN, move: QMove): QScore {
+  return {
+    ply: move.ply,
+    maxPly: move.maxPly || move.ply
+  }
+}
+
+
+function qUci(move: QMove) {
+  return move_uci(move.move)
+}
 
 export default class MovePicker {
 
   static make = () => new MovePicker();
   
-  pgns: Array<erm.QPGN>
-  lastPgn?: erm.QPGN
-  lastMove?: erm.QMove
+  pgns: Array<QPGN>
+  lastPgn?: QPGN
+  lastMove?: QMove
 
   constructor() {
     this.pgns = [];
   }
 
-  tag(pgn: erm.QPGN) {
+  tag(pgn: QPGN) {
     return pgn.tags.get('Event');
   }
 
@@ -23,7 +54,7 @@ export default class MovePicker {
     this.lastMove = undefined;
   }
 
-  setPgns(pgns: Array<erm.QPGN>) {
+  setPgns(pgns: Array<QPGN>) {
     this.pgns = pgns;
   }
   
@@ -41,7 +72,7 @@ export default class MovePicker {
     return _res;
   })();
   
-  private pickFromQMoves(moves: Array<erm.QMove>) {
+  private pickFromQMoves(moves: Array<QMove>) {
     let ns = this.randomBuckets.get(moves.length) || [0];
     return moves[ns[Math.floor(Math.random()*ns.length)]];
   }
@@ -51,7 +82,7 @@ export default class MovePicker {
     let move: string | undefined;
 
     if (!this.lastPgn) {
-      this.lastPgn = this.pgns.find(_ => q.qFen(_, fen));
+      this.lastPgn = this.pgns.find(_ => qFen(_, fen));
 
       if (this.lastPgn) {
         ctx.chat(`Entering ${this.tag(this.lastPgn)}`);
@@ -59,12 +90,12 @@ export default class MovePicker {
     }
 
     if (this.lastPgn) {
-      let qmoves = q.qFen(this.lastPgn, fen);
+      let qmoves = qFen(this.lastPgn, fen);
 
       if (qmoves) {
         let qmove = this.pickFromQMoves(qmoves);
         if (qmove) {
-          move = q.qUci(qmove);
+          move = qUci(qmove);
           this.lastMove = qmove;
         }
       }
@@ -74,7 +105,7 @@ export default class MovePicker {
         return true;
       } else {
         if (this.lastMove) {
-          let score = q.qScore(this.lastPgn, this.lastMove);
+          let score = qScore(this.lastPgn, this.lastMove);
 
           this.lastMove = undefined;
 

@@ -24,8 +24,6 @@
   },
   "dependencies": {
     "apil": "^1.4.0",
-    "chesst": "^2.0.1",
-    "esrar": "^1.2.2",
     "node-uci": "^1.3.4",
     "pampu": "^1.0.0"
   }

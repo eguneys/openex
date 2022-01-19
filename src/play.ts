@@ -42,12 +42,12 @@ export default abstract class Play {
 
   move(uci: at.Uci, offeringDraw?: boolean) {
     return this.api.move(this.gameId, uci, offeringDraw)
-      .catch(_ => console.error(`Move fail ${uci} : ${_.message}`));
+      .catch(_ => console.error(`Move fail ${uci} : ${_.error}`));
   }
 
   chat(chat: string) {
     return this.api.chat(this.gameId, 'player', chat)
-      .catch(_ => console.error(`Chat fail ${chat} : ${_.message}`));
+      .catch(_ => console.error(`Chat fail ${chat} : ${_.error}`));
   }
 
   async play(timeout: number = 15 * 60 * 1000) {

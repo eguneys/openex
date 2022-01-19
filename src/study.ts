@@ -1,8 +1,7 @@
 import { at, StudyApi } from 'apil';
-import esrar, { StudyBuilder } from 'esrar';
 import MovePicker from './picker';
 import PlayOnTurn from './playonturn';
-import { misc } from 'chesst';
+import { Esrar, QPGN, Fen, fen_after_ucis } from 'chesstwo'
 
 export default class StudyImport {
 
@@ -18,8 +17,8 @@ export default class StudyImport {
     this.picker = new MovePicker();
   }
 
-  setPgns(builder: StudyBuilder) {
-    this.picker.setPgns(builder.pgns);
+  setPgns(pgns: Array<QPGN>) {
+    this.picker.setPgns(pgns);
   }
 
   abort(status: at.GameStatus) {
@@ -28,7 +27,7 @@ export default class StudyImport {
 
   move(ctx: PlayOnTurn, position: string, moves: Array<string>) {
     let res = false;
-    let fen = misc.fenAfterUcis(position, moves);
+    let fen = fen_after_ucis(position, moves);
     if (fen) {
       res = this.picker.pick(ctx, fen);
     } else {
@@ -62,8 +61,8 @@ export default class StudyImport {
 
     try {
       if (pgns) {
-        let builder = esrar(pgns);
-        this.setPgns(builder);
+        let builder = Esrar(pgns);
+        this.setPgns(builder.pgns);
         ctx.chat(`Loaded ${builder.pgns.length} pgns`);
       } else {
         console.warn(`No pgns in study ${match}`)
