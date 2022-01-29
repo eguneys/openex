@@ -1,3 +1,4 @@
+
 module.exports = {
   botId: 'openingsexercise',
   token: '',
