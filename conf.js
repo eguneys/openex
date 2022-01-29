@@ -1,6 +1,6 @@
 module.exports = {
   botId: 'openingsexercise',
-  token: 'bottoken',
+  token: '',
   enginePath: '../bin/stockfish_13_linux_x64/stockfish_13_linux_x64',
   acceptOptions: {
   },

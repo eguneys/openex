@@ -1,4 +1,5 @@
 node_modules/
 lib/
 bin/conf.js
+conf.js
 logs/all.txt

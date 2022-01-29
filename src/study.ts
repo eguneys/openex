@@ -12,6 +12,7 @@ export default class StudyImport {
   
   constructor(token: string) {
 
+    console.log(token)
     this.study = StudyApi.make({token});
     
     this.picker = new MovePicker();
@@ -55,7 +56,13 @@ export default class StudyImport {
       if (match) {
         matchedReg = `${match[1]}`;
         ctx.chat(`Loading ${match[1]} ..`);
-        pgns = await this.study.allChapters(match[1]);
+        try {
+          pgns = await this.study.allChapters(match[1]);
+        } catch (e) {
+          ctx.chat(`Error reading study`)
+          console.log(`Error reading study`, e)
+          return
+        }
       }
     }
 
@@ -65,6 +72,7 @@ export default class StudyImport {
         this.setPgns(builder.pgns);
         ctx.chat(`Loaded ${builder.pgns.length} pgns`);
       } else {
+        ctx.chat(`Error reading PGN in study`)
         console.warn(`No pgns in study ${match}`)
       }
     } catch (e) {
