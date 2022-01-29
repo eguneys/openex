@@ -46,6 +46,7 @@ export default class StudyImport {
     let match = studyLink.match(chapterIdReg);
 
     console.log('maybeLoad', studyLink, match);
+    try {
     if (match) {
       matchedReg = `${match[1]}/${match[2]}`;
       ctx.chat(`Loading ${match[1]}/${match[2]} ..`);
@@ -56,15 +57,15 @@ export default class StudyImport {
       if (match) {
         matchedReg = `${match[1]}`;
         ctx.chat(`Loading ${match[1]} ..`);
-        try {
-          pgns = await this.study.allChapters(match[1]);
-        } catch (e) {
-          ctx.chat(`Error reading study`)
-          console.log(`Error reading study`, e)
-          return
-        }
+        pgns = await this.study.allChapters(match[1]);
       }
     }
+    } catch (e) {
+      ctx.chat(`Error reading study`)
+      console.log(`Error reading study`, e)
+      return
+    }
+
 
     try {
       if (pgns) {
