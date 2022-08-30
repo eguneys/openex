@@ -1,0 +1,14 @@
+[Unit]
+Description=Openex openingsexercise bot
+After=network.target
+
+
+[Service]
+User=ubuntu
+Type=simple
+Restart=on-failure
+ExecStart=/usr/bin/node /home/eguneys/openex/bin/main.js
+
+
+[Install]
+WantedBy=multi-user.target
