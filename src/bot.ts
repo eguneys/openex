@@ -44,7 +44,7 @@ export default class Bot {
 
     play.play().then(() => {
       this.plays.delete(id);
-    });
+    }).catch(e => {});
 
     this.plays.set(id, play);
   }
@@ -53,6 +53,7 @@ export default class Bot {
                          timeout: number = 15 * 60 * 1000) {
     let config = acceptConfig(acceptOptions);
 
+    try {
     let { abort,
           response } = await this.api.incomingEvents();
 
@@ -73,6 +74,10 @@ export default class Bot {
       }, timeout);
     });
     
+    } catch (e) {
+
+      throw e
+    }
   }
   
 }
