@@ -1,10 +1,14 @@
 import fs from 'fs';
 import path from 'path';
-import { IPlayer } from './playonturn';
-import Bot from './bot';
-import Psu from './psu';
+import { IPlayer } from './playonturn.js';
+import Bot from './bot.js';
+import Psu from './psu.js';
 
-export default async function app(config: any) {
+export default function app(config: any) {
+  return _app(config)
+}
+
+async function _app(config: any) {
 
   let { token,
         botId,
@@ -13,6 +17,7 @@ export default async function app(config: any) {
         enginePath } = config;
 
   try {
+    let __dirname = path.resolve(path.dirname(''))
     enginePath = path.join(__dirname, enginePath);
     if (!fs.existsSync(enginePath)) {
       throw new Error('Engine not found ' + enginePath);

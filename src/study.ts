@@ -1,7 +1,12 @@
 import { at, StudyApi } from 'apil';
-import MovePicker from './picker';
-import PlayOnTurn from './playonturn';
-import { Esrar, QPGN, Fen, fen_after_ucis } from 'chesstwo'
+import MovePicker from './picker.js';
+import PlayOnTurn from './playonturn.js';
+import pkg from 'chesstwo'
+//import { Esrar, QPGN, Fen, fen_after_ucis } from 'chesstwo'
+const { Esrar, fen_after_ucis } = pkg
+
+type QPGN = any
+type Fen = any
 
 export default class StudyImport {
 
@@ -12,7 +17,6 @@ export default class StudyImport {
   
   constructor(token: string) {
 
-    console.log(token)
     this.study = StudyApi.make({token});
     
     this.picker = new MovePicker();
@@ -77,6 +81,7 @@ export default class StudyImport {
         console.warn(`No pgns in study ${match}`)
       }
     } catch (e) {
+      console.log('error', e)
       ctx.chat(`Couldnt load study from: ${matchedReg}`);
     }
   }

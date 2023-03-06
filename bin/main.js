@@ -1,4 +1,6 @@
-let app = require('../lib');
-let conf = require('./conf');
+//let app = require('../lib');
+//let conf = require('./conf');
+import app from '../lib'
+import conf from './conf'
 
-app.default(conf);
+app(conf);

@@ -2,15 +2,15 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.13.0
-  '@types/node-uci': ^1.3.0
+  '@types/node-uci': ^1.3.2
   '@types/through': ^0.0.30
   apil: link:../apil
   ava: ^3.15.0
   chesstwo: link:../chesstwo
   node-uci: ^1.3.4
   pampu: ^1.0.0
-  tsc-watch: ^4.2.9
-  typescript: ^4.2.3
+  tsc-watch: ^4.6.2
+  typescript: ^4.9.5
 
 dependencies:
   apil: link:../apil

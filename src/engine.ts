@@ -1,5 +1,5 @@
 import { at } from 'apil';
-import PlayOnTurn, { IPlayer } from './playonturn';
+import PlayOnTurn, { IPlayer } from './playonturn.js';
 
 import { Engine } from 'node-uci';
 

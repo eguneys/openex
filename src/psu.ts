@@ -1,8 +1,8 @@
 import { at } from 'apil';
-import PlayOnTurn, { IPlayer } from './playonturn';
+import PlayOnTurn, { IPlayer } from './playonturn.js';
 
-import Engine from './engine';
-import Book from './book';
+import Engine from './engine.js';
+import Book from './book.js';
 
 export default class Psu implements IPlayer {
 

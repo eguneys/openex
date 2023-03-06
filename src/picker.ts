@@ -1,5 +1,9 @@
-import PlayOnTurn from './playonturn';
-import { QPGN, QMove, move_uci } from 'chesstwo'
+import PlayOnTurn from './playonturn.js';
+//import { QPGN, QMove, move_uci } from 'chesstwo'
+import pkg from 'chesstwo'
+const { move_uci } = pkg
+type QPGN = any
+type QMove = any
 
 
 function almostEqual(fen: string, key: string) {

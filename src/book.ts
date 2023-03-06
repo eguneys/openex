@@ -1,7 +1,11 @@
 import { at } from 'apil';
-import PlayOnTurn, { IPlayer } from './playonturn';
-import StudyImport from './study';
-import { PamCache } from 'pampu';
+import PlayOnTurn, { IPlayer } from './playonturn.js';
+import StudyImport from './study.js';
+//import { PamCache } from 'pampu';
+import pkg from 'pampu'
+const { PamCache } = pkg
+
+type PamCache<A, B> = any
 
 export default class Book implements IPlayer {
 

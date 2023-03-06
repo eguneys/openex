@@ -1,5 +1,5 @@
 import { at } from 'apil';
-import Play from './play';
+import Play from './play.js';
 
 export interface IPlayer {
   init(): Promise<void>;

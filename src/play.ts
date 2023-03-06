@@ -44,7 +44,7 @@ export default abstract class Play {
 
   move(uci: at.Uci, offeringDraw?: boolean) {
     return this.api.move(this.gameId, uci, offeringDraw)
-      .catch(_ => console.error(`Move fail ${uci} : ${_.error}`));
+      .catch(_ => console.error(`Move fail ${uci} : ${_}`));
   }
 
   chat(chat: string) {

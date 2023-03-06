@@ -1,7 +1,7 @@
 import { at, Bot as BotApi, Challenge as ChallengeApi } from 'apil';
-import { canAccept, AcceptOptions, acceptConfig } from './accept';
-import Play from './play';
-import PlayOnTurn, { IPlayer } from './playonturn';
+import { canAccept, AcceptOptions, acceptConfig } from './accept.js';
+import Play from './play.js';
+import PlayOnTurn, { IPlayer } from './playonturn.js';
 
 export default class Bot {
 
